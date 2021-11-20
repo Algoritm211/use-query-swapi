@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
-import {useQuery} from "react-query";
+import {useQuery, UseQueryResult} from "react-query";
 import PlanetsAPI from '../../api/planets'
 import Planet from "./Planet/Planet";
 
 const Planets: React.FC = () => {
   const [page, setPage] = useState(1);
-  // @ts-ignore
-  const {data, status} = useQuery(['planets', page], PlanetsAPI.getPlanets, {
-    staleTime: 10000,
-  })
+  const {data, status} = useQuery(
+    ['planets', page],
+    () => PlanetsAPI.getPlanets(page),
+    { staleTime: 10000}
+  )
+
   const PlanetsBlock = data?.results.map((planet) => {
     return <Planet key={planet.name} planet={planet} />
   })
