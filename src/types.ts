@@ -33,3 +33,10 @@ export type PlanetType = {
   edited: string,
   url: string
 }
+
+export type ResponseSwapiType<T> = {
+  count: number,
+  next: string | null,
+  previous: string | null,
+  results: Array<T>
+}

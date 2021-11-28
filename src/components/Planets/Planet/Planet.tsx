@@ -1,5 +1,5 @@
 import React from 'react';
-import {PlanetType} from "../../types";
+import {PlanetType} from "../../../types";
 
 type PropsType = {
   planet: PlanetType
@@ -7,7 +7,7 @@ type PropsType = {
 
 const Planet: React.FC<PropsType> = ({planet}) => {
   return (
-    <div>
+    <div className='card'>
       <h3>{planet.name}</h3>
       <p>Diameter: {planet.diameter}</p>
       <p>Mass: {planet.rotation_period}</p>

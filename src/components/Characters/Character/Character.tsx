@@ -1,5 +1,5 @@
 import React from 'react';
-import {CharacterType} from "../../types";
+import {CharacterType} from "../../../types";
 
 type PropsType = {
   character: CharacterType
@@ -7,7 +7,7 @@ type PropsType = {
 
 const Character: React.FC<PropsType> = ({character}) => {
   return (
-    <div>
+    <div className='card'>
       <h3>{character.name}</h3>
       <p>Eye color: {character.eye_color}</p>
       <p>Height: {character.height}</p>
